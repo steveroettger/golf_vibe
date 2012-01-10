@@ -11,3 +11,9 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+test:
+	title: Test Product
+	description: This is the test product for this application. Nothing too special about it, but o well.
+	image_url: test_product.jpg
+	price: 49.95
