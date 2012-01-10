@@ -54,7 +54,7 @@ class ProductTest < ActiveSupport::TestCase
    	product = Product.new(title:         products(:test).title,
    						  description:   "yyy",
    						  price:         1,
-   						  image          "test.gif")
+   						  image_url:     "test.jpg")
     assert !product.save
     assert_equal "has already been taken", product.errors[:title].join('; ')
    end
