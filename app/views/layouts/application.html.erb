@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>The Depot Catalog</title>
+  <title>The Golf Vibe</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,11 +9,19 @@
 <body class="<%= controller.controller_name %>">
 	<div id="banner">
 		<%= link_to logo %>
-		<%= @page_title || "Depot Catalog" %>
+		<%= @page_title || "Golf Vibe" %>
 	</div><!--#banner-->
 	
 	<div id="columns">
 		<div id="side">
+			<div id="cart">
+			  <% if @cart %>
+				<%= hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+					<%= render @cart %>
+				<% end %>
+			  <% end %>
+			</div><!--#cart-->
+			
 			<ul>
 				<li><a href="#">Home</a></li>
 				<li><a href="#">Questions</a></li>
